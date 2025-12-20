@@ -200,6 +200,49 @@ form button:hover {
 }
 
 
+/* RESOURCE ALLOCATION SECTION */
+.resource-section {
+  padding: 60px 80px;
+  background-color: #f4f7fa;
+}
+
+.resource-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #0b3c5d;
+}
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.resource-card {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.resource-card:hover {
+  transform: translateY(-6px);
+}
+
+.resource-card h4 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.resource-card p {
+  font-size: 22px;
+  font-weight: bold;
+  color: #0b3c5d;
+}
+
+
 
 
 /* FOOTER */
