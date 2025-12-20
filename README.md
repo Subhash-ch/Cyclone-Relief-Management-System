@@ -120,22 +120,3 @@ This project demonstrates:
 * Semantic reasoning using OWL axioms
 * Real-world frontend–backend integration
 * Clean separation of logic, reasoning, and presentation layers
-
----
-
-## 👨‍💻 Contributors
-
-Final Year Project
-Department of Artificial Intelligence & Machine Learning
-
----
-
-If you want, I can also:
-
-* Shorten this README
-* Make it more **research-paper oriented**
-* Add **screenshots section**
-* Add **architecture diagram explanation**
-* Customize it for **college submission**
-
-Just tell me 👍
