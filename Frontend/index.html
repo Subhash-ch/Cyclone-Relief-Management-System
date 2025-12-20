@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cyclone Relief & Resource Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="logo">🌪️</div>
+            <span class="site-title">Cyclone Relief System</span>
+        </div>
+
+        <div class="nav-right">
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#contact-us">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <section class="main-container">
+
+        <!-- LEFT SECTION -->
+        <div class="left-section">
+            <h1>Cyclone Relief & Resource Management</h1>
+            <p>
+                This system supports disaster management authorities by analyzing
+                cyclone-related parameters such as wind speed and water level.
+            </p>
+            <p>
+                Ontology-based reasoning is used to determine severity,
+                evacuation requirements, and responsible authorities.
+            </p>
+            <p>
+                The goal is to enable structured and faster decision-making
+                during cyclone emergencies.
+            </p>
+        </div>
+
+        <!-- RIGHT SECTION -->
+        <div class="right-section">
+            <h2>Enter Cyclone Details</h2>
+
+            <form id="cycloneForm">
+                <label>Cyclone Name</label>
+                <input type="text" id="cycloneName" required>
+
+                <label>Wind Speed (km/h)</label>
+                <input type="number" id="windSpeed" required>
+
+                <label>Water Level (meters)</label>
+                <input type="number" id="waterLevel" required>
+
+                <label>Location</label>
+                <input type="text" id="location" required>
+
+                <button type="submit">Analyze Cyclone</button>
+            </form>
+        </div>
+
+    </section>
+
+    <!-- OUTPUT SECTION (SEPARATE) -->
+    <section class="output-container">
+        <h2>Analysis Result</h2>
+
+        <div class="output-cards">
+            <div class="result-card">
+                <span class="label">Severity Level</span>
+                <span class="value" id="severityResult">--</span>
+            </div>
+
+            <div class="result-card">
+                <span class="label">Evacuation Required</span>
+                <span class="value" id="evacuationResult">--</span>
+            </div>
+
+            <div class="result-card">
+                <span class="label">Responsible Authority</span>
+                <span class="value" id="authorityResult">--</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT US SECTION -->
+    <section id="about" class="about-section">
+        <h2 class="section-title">About Us</h2>
+
+        <div class="about-cards">
+
+            <div class="about-card">
+                <img src="Assets/Images/Subhash-Image.jpg" alt="Member ">
+                <h3>Subhash Chandra Yadav</h3>
+                <p>Project Lead</p>
+            </div>
+
+            <div class="about-card">
+                <img src="https://via.placeholder.com/150" alt="Member 2">
+                <h3>Supriya Goswami</h3>
+                <p>AI Model Developer</p>
+            </div>
+
+            <div class="about-card">
+                <img src="https://via.placeholder.com/150" alt="Member 3">
+                <h3>Aditi Sadhukhan</h3>
+                <p>AI Model Developer</p>
+            </div>
+
+            <div class="about-card">
+                <img src="https://via.placeholder.com/150" alt="Member 4">
+                <h3>Sarin Prem Jaiswal</h3>
+                <p>Frontend & Backend Engineer</p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- CONTACT US SECTION -->
+    <section id="contact-us" class="contact-section">
+        <div class="contact-container">
+
+            <!-- LEFT SIDE -->
+            <div class="contact-left">
+                <h2>Let's Connect</h2>
+                <p>
+                    Have questions, suggestions, or want to collaborate?
+                    Feel free to reach out — we’d love to hear from you.
+                </p>
+            </div>
+
+            <!-- RIGHT SIDE -->
+            <div class="contact-right">
+                <form class="contact-form">
+                    <label>Name</label>
+                    <input type="text" placeholder="Your Name" required>
+
+                    <label>Phone Number</label>
+                    <input type="tel" placeholder="Your Phone Number" required>
+
+                    <label>Email ID</label>
+                    <input type="email" placeholder="Your Email" required>
+
+                    <label>Message</label>
+                    <textarea rows="4" placeholder="Your Message" required></textarea>
+
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>Cyclone Relief & Resource Management</h3>
+            <p>AI and Ontology-based Decision Support System</p>
+            <span>© 2025 Final Year Project</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

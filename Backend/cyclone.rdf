@@ -1,0 +1,488 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/yadav/ontologies/2025/11/untitled-ontology-2/"
+     xml:base="http://www.semanticweb.org/yadav/ontologies/2025/11/untitled-ontology-2/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:ontology="http://www.cyclonerelief.org/ontology#">
+    <owl:Ontology rdf:about="http://www.cyclonerelief.org/ontology#"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.cyclonerelief.org/ontology#affectsLocation -->
+
+    <owl:ObjectProperty rdf:about="http://www.cyclonerelief.org/ontology#affectsLocation"/>
+    
+
+
+    <!-- http://www.cyclonerelief.org/ontology#hasSeverity -->
+
+    <owl:ObjectProperty rdf:about="http://www.cyclonerelief.org/ontology#hasSeverity">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.cyclonerelief.org/ontology#Cyclone"/>
+        <rdfs:domain rdf:resource="http://www.cyclonerelief.org/ontology#Disaster"/>
+        <rdfs:range rdf:resource="http://www.cyclonerelief.org/ontology#Severity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cyclonerelief.org/ontology#manages -->
+
+    <owl:ObjectProperty rdf:about="http://www.cyclonerelief.org/ontology#manages"/>
+    
+
+
+    <!-- http://www.cyclonerelief.org/ontology#requires -->
+
+    <owl:ObjectProperty rdf:about="http://www.cyclonerelief.org/ontology#requires">
+        <rdfs:domain rdf:resource="http://www.cyclonerelief.org/ontology#Cyclone"/>
+        <rdfs:range rdf:resource="http://www.cyclonerelief.org/ontology#EvacuationPlan"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.cyclonerelief.org/ontology#affectedPopulation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.cyclonerelief.org/ontology#affectedPopulation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.cyclonerelief.org/ontology#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.cyclonerelief.org/ontology#resourceQuantity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.cyclonerelief.org/ontology#resourceQuantity">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.cyclonerelief.org/ontology#Resource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.cyclonerelief.org/ontology#severityLevel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.cyclonerelief.org/ontology#severityLevel">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.cyclonerelief.org/ontology#Severity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.cyclonerelief.org/ontology#Authority -->
+
+    <owl:Class rdf:about="http://www.cyclonerelief.org/ontology#Authority"/>
+    
+
+
+    <!-- http://www.cyclonerelief.org/ontology#CoastalCyclone -->
+
+    <owl:Class rdf:about="http://www.cyclonerelief.org/ontology#CoastalCyclone">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.cyclonerelief.org/ontology#Cyclone"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.cyclonerelief.org/ontology#affectsLocation"/>
+                        <owl:someValuesFrom rdf:resource="http://www.cyclonerelief.org/ontology#CoastalLocation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.cyclonerelief.org/ontology#Cyclone"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cyclonerelief.org/ontology#requires"/>
+                <owl:someValuesFrom rdf:resource="http://www.cyclonerelief.org/ontology#EvacuationPlan"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cyclonerelief.org/ontology#requires"/>
+                <owl:someValuesFrom rdf:resource="http://www.cyclonerelief.org/ontology#Rescue_Team"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cyclonerelief.org/ontology#CoastalLocation -->
+
+    <owl:Class rdf:about="http://www.cyclonerelief.org/ontology#CoastalLocation">
+        <rdfs:subClassOf rdf:resource="http://www.cyclonerelief.org/ontology#Location"/>
+        <owl:disjointWith rdf:resource="http://www.cyclonerelief.org/ontology#InlandLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cyclonerelief.org/ontology#Cyclone -->
+
+    <owl:Class rdf:about="http://www.cyclonerelief.org/ontology#Cyclone">
+        <rdfs:subClassOf rdf:resource="http://www.cyclonerelief.org/ontology#Disaster"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cyclonerelief.org/ontology#Disaster -->
+
+    <owl:Class rdf:about="http://www.cyclonerelief.org/ontology#Disaster"/>
+    
+
+
+    <!-- http://www.cyclonerelief.org/ontology#EvacuationPlan -->
+
+    <owl:Class rdf:about="http://www.cyclonerelief.org/ontology#EvacuationPlan"/>
+    
+
+
+    <!-- http://www.cyclonerelief.org/ontology#Food -->
+
+    <owl:Class rdf:about="http://www.cyclonerelief.org/ontology#Food">
+        <rdfs:subClassOf rdf:resource="http://www.cyclonerelief.org/ontology#Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cyclonerelief.org/ontology#HighSeverity -->
+
+    <owl:Class rdf:about="http://www.cyclonerelief.org/ontology#HighSeverity">
+        <rdfs:subClassOf rdf:resource="http://www.cyclonerelief.org/ontology#Severity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cyclonerelief.org/ontology#HighSeverityCyclone -->
+
+    <owl:Class rdf:about="http://www.cyclonerelief.org/ontology#HighSeverityCyclone">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.cyclonerelief.org/ontology#Cyclone"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.cyclonerelief.org/ontology#hasSeverity"/>
+                        <owl:someValuesFrom rdf:resource="http://www.cyclonerelief.org/ontology#HighSeverity"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.cyclonerelief.org/ontology#Cyclone"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cyclonerelief.org/ontology#requires"/>
+                <owl:someValuesFrom rdf:resource="http://www.cyclonerelief.org/ontology#Medicine_Kits"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cyclonerelief.org/ontology#requires"/>
+                <owl:someValuesFrom rdf:resource="http://www.cyclonerelief.org/ontology#Rescue_Team"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cyclonerelief.org/ontology#requires"/>
+                <owl:someValuesFrom rdf:resource="http://www.cyclonerelief.org/ontology#Shelter_Center"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cyclonerelief.org/ontology#InlandLocation -->
+
+    <owl:Class rdf:about="http://www.cyclonerelief.org/ontology#InlandLocation">
+        <rdfs:subClassOf rdf:resource="http://www.cyclonerelief.org/ontology#Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cyclonerelief.org/ontology#LocalAuthority -->
+
+    <owl:Class rdf:about="http://www.cyclonerelief.org/ontology#LocalAuthority">
+        <rdfs:subClassOf rdf:resource="http://www.cyclonerelief.org/ontology#Authority"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cyclonerelief.org/ontology#manages"/>
+                <owl:someValuesFrom rdf:resource="http://www.cyclonerelief.org/ontology#Food"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cyclonerelief.org/ontology#Location -->
+
+    <owl:Class rdf:about="http://www.cyclonerelief.org/ontology#Location"/>
+    
+
+
+    <!-- http://www.cyclonerelief.org/ontology#Medicine_Kits -->
+
+    <owl:Class rdf:about="http://www.cyclonerelief.org/ontology#Medicine_Kits">
+        <rdfs:subClassOf rdf:resource="http://www.cyclonerelief.org/ontology#Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cyclonerelief.org/ontology#MediumSeverity -->
+
+    <owl:Class rdf:about="http://www.cyclonerelief.org/ontology#MediumSeverity">
+        <rdfs:subClassOf rdf:resource="http://www.cyclonerelief.org/ontology#Severity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cyclonerelief.org/ontology#MediumSeverityCyclone -->
+
+    <owl:Class rdf:about="http://www.cyclonerelief.org/ontology#MediumSeverityCyclone">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.cyclonerelief.org/ontology#Cyclone"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.cyclonerelief.org/ontology#hasSeverity"/>
+                        <owl:someValuesFrom rdf:resource="http://www.cyclonerelief.org/ontology#MediumSeverity"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.cyclonerelief.org/ontology#Cyclone"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cyclonerelief.org/ontology#requires"/>
+                <owl:someValuesFrom rdf:resource="http://www.cyclonerelief.org/ontology#EvacuationPlan"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cyclonerelief.org/ontology#NDMA -->
+
+    <owl:Class rdf:about="http://www.cyclonerelief.org/ontology#NDMA">
+        <rdfs:subClassOf rdf:resource="http://www.cyclonerelief.org/ontology#Authority"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cyclonerelief.org/ontology#manages"/>
+                <owl:someValuesFrom rdf:resource="http://www.cyclonerelief.org/ontology#Shelter_Center"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cyclonerelief.org/ontology#ReliefPlan -->
+
+    <owl:Class rdf:about="http://www.cyclonerelief.org/ontology#ReliefPlan"/>
+    
+
+
+    <!-- http://www.cyclonerelief.org/ontology#Rescue_Team -->
+
+    <owl:Class rdf:about="http://www.cyclonerelief.org/ontology#Rescue_Team">
+        <rdfs:subClassOf rdf:resource="http://www.cyclonerelief.org/ontology#Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cyclonerelief.org/ontology#Resource -->
+
+    <owl:Class rdf:about="http://www.cyclonerelief.org/ontology#Resource"/>
+    
+
+
+    <!-- http://www.cyclonerelief.org/ontology#Route -->
+
+    <owl:Class rdf:about="http://www.cyclonerelief.org/ontology#Route"/>
+    
+
+
+    <!-- http://www.cyclonerelief.org/ontology#Severity -->
+
+    <owl:Class rdf:about="http://www.cyclonerelief.org/ontology#Severity"/>
+    
+
+
+    <!-- http://www.cyclonerelief.org/ontology#Shelter_Center -->
+
+    <owl:Class rdf:about="http://www.cyclonerelief.org/ontology#Shelter_Center">
+        <rdfs:subClassOf rdf:resource="http://www.cyclonerelief.org/ontology#Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cyclonerelief.org/ontology#StateAuthority -->
+
+    <owl:Class rdf:about="http://www.cyclonerelief.org/ontology#StateAuthority">
+        <rdfs:subClassOf rdf:resource="http://www.cyclonerelief.org/ontology#Authority"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cyclonerelief.org/ontology#manages"/>
+                <owl:someValuesFrom rdf:resource="http://www.cyclonerelief.org/ontology#Shelter_Center"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.cyclonerelief.org/ontology#Evacuation_Plan -->
+
+    <owl:NamedIndividual rdf:about="http://www.cyclonerelief.org/ontology#Evacuation_Plan">
+        <rdf:type rdf:resource="http://www.cyclonerelief.org/ontology#EvacuationPlan"/>
+        <rdf:type rdf:resource="http://www.cyclonerelief.org/ontology#ReliefPlan"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cyclonerelief.org/ontology#HighSeverity -->
+
+    <owl:NamedIndividual rdf:about="http://www.cyclonerelief.org/ontology#HighSeverity">
+        <rdf:type rdf:resource="http://www.cyclonerelief.org/ontology#Severity"/>
+        <ontology:severityLevel>High</ontology:severityLevel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cyclonerelief.org/ontology#LowSeverity -->
+
+    <owl:NamedIndividual rdf:about="http://www.cyclonerelief.org/ontology#LowSeverity">
+        <rdf:type rdf:resource="http://www.cyclonerelief.org/ontology#Severity"/>
+        <ontology:severityLevel>Low</ontology:severityLevel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cyclonerelief.org/ontology#NDMA_India -->
+
+    <owl:NamedIndividual rdf:about="http://www.cyclonerelief.org/ontology#NDMA_India">
+        <rdf:type rdf:resource="http://www.cyclonerelief.org/ontology#Authority"/>
+        <rdf:type rdf:resource="http://www.cyclonerelief.org/ontology#NDMA"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cyclonerelief.org/ontology#Odisha_Coast -->
+
+    <owl:NamedIndividual rdf:about="http://www.cyclonerelief.org/ontology#Odisha_Coast">
+        <rdf:type rdf:resource="http://www.cyclonerelief.org/ontology#Location"/>
+        <ontology:affectedPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">500000</ontology:affectedPopulation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cyclonerelief.org/ontology#Odisha_State_Authority -->
+
+    <owl:NamedIndividual rdf:about="http://www.cyclonerelief.org/ontology#Odisha_State_Authority">
+        <rdf:type rdf:resource="http://www.cyclonerelief.org/ontology#Authority"/>
+        <rdf:type rdf:resource="http://www.cyclonerelief.org/ontology#StateAuthority"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cyclonerelief.org/ontology#ReliefPlan_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.cyclonerelief.org/ontology#ReliefPlan_1">
+        <rdf:type rdf:resource="http://www.cyclonerelief.org/ontology#ReliefPlan"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.cyclonerelief.org/ontology#Food"/>
+            <rdf:Description rdf:about="http://www.cyclonerelief.org/ontology#Medicine_Kits"/>
+            <rdf:Description rdf:about="http://www.cyclonerelief.org/ontology#Rescue_Team"/>
+            <rdf:Description rdf:about="http://www.cyclonerelief.org/ontology#Shelter_Center"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.cyclonerelief.org/ontology#LocalAuthority"/>
+            <rdf:Description rdf:about="http://www.cyclonerelief.org/ontology#NDMA"/>
+            <rdf:Description rdf:about="http://www.cyclonerelief.org/ontology#StateAuthority"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
